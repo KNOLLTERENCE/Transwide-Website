@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transwide Cellular - Vodacom</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e60000;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      background: white;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 450px;
+      padding: 20px 25px 40px 25px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .logo img {
+      width: 80px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 10px 0 5px;
+      text-align: center;
+    }
+    .subtitle {
+      color: gray;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .info p {
+      margin: 12px 0;
+      line-height: 1.4;
+      font-size: 15px;
+    }
+    .info p strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #e60000;
+      font-weight: 700;
+    }
+    .info p a {
+      color: #e60000;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .info p a:hover,
+    .info p a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+    h2, h3 {
+      margin-top: 25px;
+      font-size: 20px;
+      border-bottom: 2px solid #e60000;
+      padding-bottom: 5px;
+    }
+    .hours {
+      background-color: #f7f7f7;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .hours div {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+    }
+    .hours div:last-child {
+      border-bottom: none;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 8% auto;
+      padding: 0;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: color 0.2s ease;
+      z-index: 10;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      outline: none;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    /* Event Section */
+    .map-section {
+      margin-top: 30px;
+    }
+    /* Call Now Button */
+    .call-now-btn {
+      display: block;
+      width: 100%;
+      margin: 30px 0 0;
+      background-color: #e60000;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .call-now-btn:hover,
+    .call-now-btn:focus {
+      background-color: #b30000;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="C:\Users\teren\Desktop\VodacomLogo.webp" alt="Vodacom Logo" />
+    </div>
+    <h1>Transwide Cellular</h1>
+    <p class="subtitle">Vodacom Approved Dealership</p>
+    <div class="info">
+      <p><strong>Phone Number</strong> <br /><a href="tel:0116931384">011 693 1384</a></p>
+      <p><strong>Email Address</strong> <br /><a href="mailto:twccorporate@tiscali.co.za">twccorporate@tiscali.co.za</a></p>
+      <p><strong>Address</strong> <br />
+        <a id="openMap" title="Click to view map" tabindex="0" role="button" aria-pressed="false">
+          99th Kenneth Road, Greenhills, Randfontein, Gauteng 1759, South Africa
+        </a>
+      </p>
+    </div>
+    <h2>Opening Hours</h2>
+    <div class="hours">
+      <div>Monday <span>09:00 AM - 05:00 PM</span></div>
+      <div>Tuesday <span>09:00 AM - 05:00 PM</span></div>
+      <div>Wednesday <span>09:00 AM - 05:00 PM</span></div>
+      <div>Thursday <span>09:00 AM - 05:00 PM</span></div>
+      <div>Friday <span>09:00 AM - 05:00 PM</span></div>
+      <div>Saturday <span>09:00 AM - 01:00 PM</span></div>
+      <div>Sunday <span>Closed</span></div>
+    </div>
+
+    <a class="call-now-btn" href="tel:0116931384" aria-label="Call Transwide Cellular now">Call Now</a>
+
+    <div class="map-section">
+      <h3>Event Location - Vleisvees</h3>
+      <p>We will be promoting Vodacom Transwide Cellular at the Vleisvees event.</p>
+      <p><a href="https://www.sionspoortvleis.org/index.html" target="_blank" rel="noopener noreferrer">Sionspoort Vleisvees Website</a></p>
+      <!-- Vleisvees map iframe -->
+      <iframe
+        src="https://maps.google.com/maps?q=-26.173212,27.648068&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Vleisvees Location on Google Maps"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Modal Popup for Transwide Cellular Map -->
+  <div id="mapModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close" id="closeMap" aria-label="Close map popup">&times;</button>
+      <!-- Transwide Cellular map iframe with coordinates -->
+      <iframe
+        src="https://maps.google.com/maps?q=-26.168324,27.698573&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Transwide Cellular Location on Google Maps"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    const openMap = document.getElementById('openMap');
+    const closeMap = document.getElementById('closeMap');
+    const mapModal = document.getElementById('mapModal');
+
+    openMap.onclick = function () {
+      mapModal.style.display = "block";
+      openMap.setAttribute('aria-pressed', 'true');
+    };
+
+    openMap.onkeypress = function(e) {
+      if(e.key === 'Enter' || e.key === ' ') {
+        mapModal.style.display = "block";
+        openMap.setAttribute('aria-pressed', 'true');
+        e.preventDefault();
+      }
+    };
+
+    closeMap.onclick = function () {
+      mapModal.style.display = "none";
+      openMap.setAttribute('aria-pressed', 'false');
+      openMap.focus();
+    };
+
+    window.onclick = function (event) {
+      if (event.target == mapModal) {
+        mapModal.style.display = "none";
+        openMap.setAttribute('aria-pressed', 'false');
+        openMap.focus();
+      }
+    };
+  </script>
+</body>
+</html>
