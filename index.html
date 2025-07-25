@@ -13,12 +13,9 @@
       --box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
       color: #333;
@@ -30,35 +27,17 @@
       color: white;
       text-align: center;
       padding: 40px 20px;
-      position: relative;
     }
 
-    header img {
-      width: 100px;
-      margin-bottom: 10px;
-    }
+    header img { width: 100px; margin-bottom: 10px; }
+    header h1 { font-size: 32px; margin: 10px 0 5px; letter-spacing: 1px; }
+    header p { font-size: 18px; opacity: 0.9; }
 
-    header h1 {
-      font-size: 32px;
-      margin: 10px 0 5px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
 
     .card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       padding: 25px;
@@ -71,23 +50,12 @@
       padding-left: 12px;
       font-size: 24px;
       color: var(--primary-color);
-      margin-top: 0;
+      margin-bottom: 15px;
     }
 
-    .info p {
-      margin: 12px 0;
-      font-size: 17px;
-    }
-
-    .info a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .info a:hover {
-      text-decoration: underline;
-    }
+    .info p { margin: 12px 0; font-size: 17px; }
+    .info a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+    .info a:hover { text-decoration: underline; }
 
     .hours div {
       display: flex;
@@ -97,9 +65,7 @@
       font-size: 16px;
     }
 
-    .hours div:last-child {
-      border-bottom: none;
-    }
+    .hours div:last-child { border-bottom: none; }
 
     .map iframe {
       width: 100%;
@@ -109,16 +75,19 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .call-button {
+    .call-button, .enter-prize-button {
       display: inline-block;
-      background: var(--primary-color);
-      color: white;
       padding: 18px 28px;
-      border-radius: 12px;
-      text-decoration: none;
       font-size: 20px;
       font-weight: bold;
-      transition: all 0.3s;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .call-button {
+      background: var(--primary-color);
+      color: white;
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
@@ -130,14 +99,9 @@
     .enter-prize-button {
       background: linear-gradient(135deg, #e60000, #ff3333);
       color: white;
-      padding: 18px 28px;
-      font-size: 20px;
       border: none;
-      border-radius: 12px;
       cursor: pointer;
-      font-weight: bold;
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
       animation: pulse 2s infinite;
     }
 
@@ -155,7 +119,6 @@
     .floating-footer {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
       border-radius: var(--border-radius);
       border: 1px solid rgba(255,255,255,0.3);
       box-shadow: var(--box-shadow);
@@ -177,22 +140,24 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0,0,0,0.7);
+      animation: fadeIn 0.3s ease;
     }
 
     .modal-content {
-      margin: 8% auto;
+      margin: 5% auto;
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       border-radius: 15px;
       overflow: hidden;
       position: relative;
       box-shadow: var(--box-shadow);
       background: white;
+      animation: slideUp 0.3s ease;
     }
 
     .modal-content iframe {
       width: 100%;
-      height: 400px;
+      height: 700px;
       border: none;
     }
 
@@ -201,9 +166,19 @@
       top: 10px;
       right: 15px;
       font-size: 30px;
-      color: white;
+      color: #333;
       cursor: pointer;
       z-index: 1000;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @media (max-width: 768px) {
@@ -211,8 +186,10 @@
         font-size: 18px;
         padding: 14px 20px;
       }
+      .modal-content iframe {
+        height: 500px;
+      }
     }
-
   </style>
 </head>
 <body>
@@ -257,7 +234,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
-      <button id="enterPrizeBtn" class="enter-prize-button">Enter a Prize</button>
+      <button id="enterPrizeBtn" class="enter-prize-button">Enter Prize Draw</button>
     </div>
 
   </div>
@@ -266,7 +243,7 @@
     &copy; 2025 Transwide Cellular <br>Vodacom Partner
   </div>
 
-  <!-- Modal for Main Address Map -->
+  <!-- Modal for Map -->
   <div id="mapModal" class="modal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
@@ -278,10 +255,7 @@
   <div id="prizeModal" class="modal">
     <div class="modal-content">
       <span class="close" id="closePrizeModal">&times;</span>
-      <div style="padding: 20px; text-align: center; color: #333;">
-        <h2>Prize Entry Coming Soon!</h2>
-        <p>Stay tuned for exciting giveaways and competitions.</p>
-      </div>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVzRG3emf8rOSXxYGCjq0svtiT0dqeWnIiaALuEfqlumN_rA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
   </div>
 
@@ -303,7 +277,8 @@
       mapModal.style.display = "none";
     };
 
-    enterPrizeBtn.onclick = function () {
+    enterPrizeBtn.onclick = function (e) {
+      e.preventDefault();
       prizeModal.style.display = "block";
     };
 
