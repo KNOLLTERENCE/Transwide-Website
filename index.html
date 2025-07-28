@@ -13,13 +13,13 @@
       --box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
       color: #333;
+      overflow-x: hidden;
     }
 
     header {
@@ -29,21 +29,11 @@
       padding: 40px 20px;
     }
 
-    header img {
-      width: 100px;
-      margin-bottom: 10px;
-    }
+    header img { width: 100px; margin-bottom: 10px; }
+    header h1 { font-size: 32px; margin: 10px 0 5px; letter-spacing: 1px; }
+    header p { font-size: 18px; opacity: 0.9; }
 
-    header h1 {
-      font-size: 32px;
-      margin: 10px 0 5px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
 
     .card {
       background: var(--glass-bg);
@@ -60,48 +50,51 @@
       padding-left: 12px;
       font-size: 24px;
       color: var(--primary-color);
-      margin-top: 0;
+      margin-bottom: 15px;
     }
 
-    .info p {
-      margin: 12px 0;
-      font-size: 17px;
-    }
-
-    .info a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
+    .info p { margin: 12px 0; font-size: 17px; }
+    .info a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+    .info a:hover { text-decoration: underline; }
 
     .hours div {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
       border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 16px;
     }
 
-    .map iframe, .shop-photo {
+    .hours div:last-child { border-bottom: none; }
+
+    .map iframe {
       width: 100%;
+      height: 320px;
+      border: none;
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .shop-photo {
-      margin-bottom: 20px;
+    .action-buttons {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .call-button, .event-details-button {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .call-button {
-      display: inline-block;
       background: var(--primary-color);
       color: white;
-      padding: 18px 28px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      transition: all 0.3s;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     .call-button:hover {
@@ -109,28 +102,20 @@
       transform: translateY(-2px);
     }
 
-    .enter-prize-button {
+    .event-details-button {
       background: linear-gradient(135deg, #e60000, #ff3333);
       color: white;
-      padding: 18px 28px;
-      font-size: 20px;
-      border: none;
-      border-radius: 12px;
       cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
       animation: pulse 2s infinite;
     }
 
-    .enter-prize-button:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    .event-details-button:hover {
+      transform: translateY(-2px) scale(1.03);
     }
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(230,0,0,0.6); }
-      70% { box-shadow: 0 0 0 15px rgba(230,0,0,0); }
+      70% { box-shadow: 0 0 0 10px rgba(230,0,0,0); }
       100% { box-shadow: 0 0 0 0 rgba(230,0,0,0); }
     }
 
@@ -145,6 +130,7 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
+      color: #555;
     }
 
     .modal {
@@ -154,72 +140,112 @@
       left: 0;
       top: 0;
       width: 100%;
-      height: 100%;
+      .enter-draw-button {
+  color: white !important;
+}
+
+.enter-draw-button:visited {
+  color: white !important;
+}
+height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.7);
+      animation: fadeIn 0.3s ease;
     }
 
     .modal-content {
-      margin: 10% auto;
+      margin: 5% auto;
       width: 90%;
-      max-width: 600px;
-      border-radius: 20px;
+      max-width: 700px;
+      border-radius: 15px;
       overflow: hidden;
-      background: #fff;
-      text-align: center;
-      padding: 30px 20px;
       position: relative;
-      animation: fadeInUp 0.5s ease-out;
+      box-shadow: var(--box-shadow);
+      background: white;
+      animation: slideUp 0.3s ease;
+      padding: 20px;
+      text-align: center;
     }
 
-    @keyframes fadeInUp {
-      from {transform: translateY(50px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
+    .modal-content a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .modal-content a:hover {
+      text-decoration: underline;
+    }
+
+    .animated-text {
+      margin: 20px 0;
+      font-size: 22px;
+      font-weight: bold;
+      animation: fadeSlide 2s ease forwards;
+    }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .enter-draw-button {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e60000, #ff3333);
+      color: white;
+      text-decoration: none;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .enter-draw-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .iframe-container {
+      margin-top: 20px;
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
     }
 
     .close {
       position: absolute;
       top: 10px;
-      right: 20px;
+      right: 15px;
       font-size: 30px;
       color: #333;
       cursor: pointer;
+      z-index: 1000;
     }
 
-    .modal h2 {
-      font-size: 28px;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-      animation: slideIn 1s ease forwards;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    @keyframes slideIn {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .highlight {
-      font-size: 20px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .enter-draw-button {
-      background: var(--primary-color);
-      color: white;
-      padding: 16px 26px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 25px;
-      transition: all 0.3s;
-    }
-
-    .enter-draw-button:hover {
-      background: #b30000;
-      transform: scale(1.05);
+    @media (max-width: 768px) {
+      .call-button, .event-details-button {
+        font-size: 16px;
+        padding: 10px 16px;
+      }
+      .iframe-container iframe {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -228,7 +254,7 @@
   <header>
     <img src="VodacomLogo.webp" alt="Vodacom Logo">
     <h1>Transwide Cellular</h1>
-    <p>Official Vodacom Approved Dealer</p>
+    <p>Vodacom Approved Dealer</p>
   </header>
 
   <div class="container">
@@ -236,8 +262,10 @@
     <div class="card info">
       <h2>Contact Information</h2>
       <p><strong>Phone:</strong> <a href="tel:0116931384">011 693 1384</a></p>
+      <p><strong>Cell:</strong> <a href="tel:0829779110">082 977 9110</a></p>
       <p><strong>Email:</strong> <a href="mailto:twccorporate@tiscali.co.za">twccorporate@tiscali.co.za</a></p>
-      <p><strong>Address:</strong> 99th Kenneth Road, Greenhills, Randfontein</p>
+      <p><strong>Other Email:</strong> <a href="mailto:admin@vodadealers.co.za">admin@vodadealers.co.za</a></p>
+      <p><strong>Address:</strong> Shop 2 @ Green Mile Kenneth Road, Greenhills, Randfontein, 1759</p>
     </div>
 
     <div class="card">
@@ -249,12 +277,13 @@
         <div>Thursday <span>09:00 - 17:00</span></div>
         <div>Friday <span>09:00 - 17:00</span></div>
         <div>Saturday <span>09:00 - 13:00</span></div>
-        <div>Sunday <span>Closed</span></div>
+        <div>Sunday & Public Holidays <span>Closed</span></div>
       </div>
     </div>
 
-    <div class="shop-photo">
-      <img src="YourShopPhoto.jpg" alt="Transwide Cellular Shop" style="width: 100%; border-radius: 15px;">
+    <div class="card">
+      <h2>Our Shop Front</h2>
+      <img src="Transwide.webp.png" alt="Transwide Shop Front" style="width:100%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
     </div>
 
     <div class="card map">
@@ -262,55 +291,107 @@
       <iframe src="https://maps.google.com/maps?q=-26.168324,27.698573&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
     </div>
 
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="tel:0116931384" class="call-button">Call Now</a>
-    </div>
+  <div class="card map" style="text-align: center;">
+      <h2>Scan the QR Code For WhatsApp.</h2>
+      <img src="Whatsapp_QR_CODE.webp.jpg" alt="Cell Whatsapp Code" style="width:30%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/BKRFBHSOSCYWB1?src=qr" target="_blank">082 977 9110</a></p>
+  </div>
 
-    <div style="text-align: center; margin-top: 20px;">
-      <button id="enterPrizeBtn" class="enter-prize-button">Enter a Prize</button>
+<div class="card map" style="text-align: center;">
+    <h2>View Our Latest Booklet.</h2>
+    <img src="QR2_CODE_BOOKLET.webp.jpg" alt="Vodacom Booklet" style="width:30%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+    <p><strong></strong> <a href="https://l.ead.me/bbcDFO" target="_blank">Vodacom Booklet</a></p>
+</div>
+
+    <div class="action-buttons">
+      <a href="tel:0116931384" class="call-button">Call Now</a>
+      <button id="eventDetailsBtn" class="event-details-button">Event Details</button>
     </div>
 
   </div>
 
   <div class="floating-footer">
-    &copy; 2025 Transwide Cellular <br>Vodacom Partner
+    <p style="font-size: 12px; color: #777; margin-bottom: 10px;">
+      Disclaimer: Transwide Cellular and Vodacom are not liable for any damages or losses incurred from the use of this website. Enter and participate at your own risk.
+    </p>
+    <a href="#" id="termsLink" style="font-size: 12px; color: var(--primary-color); text-decoration: underline;">Terms & Conditions</a><br>
+    &copy; 2025 Transwide Cellular <br>Vodacom Dealership Partner
   </div>
 
-  <!-- Prize Modal -->
-  <div id="prizeModal" class="modal">
+  <!-- Event Modal -->
+  <div id="eventModal" class="modal">
     <div class="modal-content">
-      <span class="close" id="closePrizeModal">&times;</span>
-      <h2>Join us at the Sionspoort Vleisvees</h2>
-      <p>Explore Vodacom’s latest promotions on the <strong>2nd of August 2025</strong>.</p>
-      <p><a href="https://www.sionspoortvleis.org/index.html" target="_blank">Visit Vleisvees Website</a></p>
-      <div class="highlight">Transwide Competition</div>
-      <p>Come visit our stand no. <strong>252-253</strong> next to the Buffelsfontein stage.</p>
-      <button class="enter-draw-button" onclick="openGoogleForm()">Enter the Draw</button>
+      <span class="close" id="closeEventModal">&times;</span>
+      <p>Join us at <a href="https://www.sionspoortvleis.org/index.html" target="_blank">Sionspoort Vleisfees</a> on the 2nd of August 2025.</p>
+      <div class="animated-text">Transwide Cellular Competition!<br>Come visit our stand number 252-253 next to the Buffelsfontein Stage.</div>
+      <a href="#prizeForm" class="enter-draw-button" id="enterPrizeBtn">Enter Draw to Win!</a>
+      <div class="iframe-container" id="prizeForm" style="display:none;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVzRG3emf8rOSXxYGCjq0svtiT0dqeWnIiaALuEfqlumN_rA/viewform?embedded=true">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms & Conditions Modal -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeTermsModal">&times;</span>
+      <h2>Terms & Conditions</h2>
+      <p>By accessing and using this website, you agree to the following:</p>
+      <ul style="text-align: left; margin: 20px 0; line-height: 1.6;">
+        <li>This website is provided "as is" without any warranties.</li>
+        <li>Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from the use of this site.</li>
+        <li>Participation in competitions is voluntary and at your own risk.</li>
+        <li>Personal information submitted via forms will be handled according to Vodacom's privacy policies.</li>
+        <li>Prices, promotions, and availability are subject to change without notice.</li>
+        <li>By using the website, you agree to indemnify and hold harmless Transwide Cellular from any claims arising from your use.</li>
+      </ul>
     </div>
   </div>
 
   <script>
+    const eventDetailsBtn = document.getElementById('eventDetailsBtn');
+    const eventModal = document.getElementById('eventModal');
+    const closeEventModal = document.getElementById('closeEventModal');
     const enterPrizeBtn = document.getElementById('enterPrizeBtn');
-    const prizeModal = document.getElementById('prizeModal');
-    const closePrizeModal = document.getElementById('closePrizeModal');
+    const prizeForm = document.getElementById('prizeForm');
 
-    enterPrizeBtn.onclick = function () {
-      prizeModal.style.display = "block";
+    eventDetailsBtn.onclick = function (e) {
+      e.preventDefault();
+      eventModal.style.display = "block";
     };
 
-    closePrizeModal.onclick = function () {
-      prizeModal.style.display = "none";
+    closeEventModal.onclick = function () {
+      eventModal.style.display = "none";
+      prizeForm.style.display = "none";
     };
 
     window.onclick = function (event) {
-      if (event.target == prizeModal) {
-        prizeModal.style.display = "none";
+      if (event.target == eventModal) {
+        eventModal.style.display = "none";
+        prizeForm.style.display = "none";
+      }
+      if (event.target == termsModal) {
+        termsModal.style.display = "none";
       }
     };
 
-    function openGoogleForm() {
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSeVzRG3emf8rOSXxYGCjq0svtiT0dqeWnIiaALuEfqlumN_rA/viewform", "_blank");
-    }
+    enterPrizeBtn.onclick = function (e) {
+      e.preventDefault();
+      prizeForm.style.display = "block";
+    };
+
+    const termsLink = document.getElementById('termsLink');
+    const termsModal = document.getElementById('termsModal');
+    const closeTermsModal = document.getElementById('closeTermsModal');
+
+    termsLink.onclick = function (e) {
+      e.preventDefault();
+      termsModal.style.display = "block";
+    };
+
+    closeTermsModal.onclick = function () {
+      termsModal.style.display = "none";
+    };
   </script>
 
 </body>
