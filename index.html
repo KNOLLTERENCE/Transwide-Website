@@ -259,13 +259,32 @@ height: 100%;
 
   <div class="container">
 
-    <div class="card info">
-      <h2>Contact Information</h2>
-      <p><strong>Phone:</strong> <a href="tel:0116931384">011 693 1384</a></p>
-      <p><strong>Cell:</strong> <a href="tel:0829779110">082 977 9110</a></p>
-      <p><strong>Email:</strong> <a href="mailto:twccorporate@tiscali.co.za">twccorporate@tiscali.co.za & </a><a href="mailto:admin@vodadealers.co.za">admin@vodadealers.co.za</a></p>
-      <p><strong>Address:</strong> Shop 2 @ Green Mile Kenneth Road, Greenhills, Randfontein, 1759</p>
-    </div>
+<div class="card info" style="font-family: Arial, sans-serif; line-height: 1.8; font-size: 14px;">
+  <h2 style="font-size: 20px; margin-bottom: 20px;">Contact Information</h2>
+  <table style="border-collapse: collapse;">
+    <tr>
+      <td style="padding-right: 15px; vertical-align: top;"><strong>Phone:</strong></td>
+      <td><a href="tel:0116931384" style="text-decoration: none; color: #E60000;">011 693 1384</a></td>
+    </tr>
+    <tr>
+      <td style="padding-right: 15px; vertical-align: top;"><strong>Cell:</strong></td>
+      <td><a href="tel:0829779110" style="text-decoration: none; color: #E60000;">082 977 9110</a></td>
+    </tr>
+    <tr>
+      <td style="padding-right: 15px; vertical-align: top;"><strong>Email:</strong></td>
+      <td>
+        <a href="mailto:twccorporate@tiscali.co.za" style="text-decoration: none; color: #E60000;">twccorporate@tiscali.co.za</a><br>
+        <a href="mailto:admin@vodadealers.co.za" style="text-decoration: none; color: #E60000;">admin@vodadealers.co.za</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-right: 15px; vertical-align: top;"><strong>Address:</strong></td>
+      <td><span style="color: #E60000;"><strong>Shop 2 @ Green Mile, Kenneth Road, Greenhills, Randfontein, 1759</strong></span></td>
+    </tr>
+  </table>
+</div>
+
+
 
     <div class="card">
       <h2>Opening Hours</h2>
@@ -297,21 +316,24 @@ height: 100%;
   </div>
 
 <div class="card map" style="text-align: center;">
-    <h2>View Our Latest Booklet.</h2>
+    <h2>View Latest Vodacom Booklet.</h2>
     <img src="QR2_CODE_BOOKLET.webp" alt="Vodacom Booklet" style="width:30%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
     <p><strong></strong> <a href="https://l.ead.me/bbcDFO" target="_blank">Vodacom Booklet</a></p>
 </div>
 
     <div class="action-buttons">
       <a href="tel:0116931384" class="call-button">Call Now</a>
-      <button id="eventDetailsBtn" class="event-details-button">Event Details</button>
+    </div>
+
+        <div class="action-buttons">
+      <button id="eventDetailsBtn" class="event-details-button">Enter Competition!</button>
     </div>
 
   </div>
 
   <div class="floating-footer">
     <p style="font-size: 12px; color: #777; margin-bottom: 10px;">
-      Disclaimer: Transwide Cellular and Vodacom are not liable for any damages or losses incurred from the use of this website. Enter and participate at your own risk.
+      E & OE </br> Disclaimer: Transwide Cellular and Vodacom are not liable for any damages or losses incurred from the use of this website. Enter and participate at your own risk.
     </p>
     <a href="#" id="termsLink" style="font-size: 12px; color: var(--primary-color); text-decoration: underline;">Terms & Conditions</a><br>
     &copy; 2025 Transwide Cellular <br>Vodacom Dealership Partner
@@ -330,22 +352,42 @@ height: 100%;
     </div>
   </div>
 
-  <!-- Terms & Conditions Modal -->
-  <div id="termsModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeTermsModal">&times;</span>
-      <h2>Terms & Conditions</h2>
-      <p>By accessing and using this website, you agree to the following:</p>
-      <ul style="text-align: left; margin: 20px 0; line-height: 1.6;">
-        <li>This website is provided "as is" without any warranties.</li>
-        <li>Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from the use of this site.</li>
-        <li>Participation in competitions is voluntary and at your own risk.</li>
-        <li>Personal information submitted via forms will be handled according to Vodacom's privacy policies.</li>
-        <li>Prices, promotions, and availability are subject to change without notice.</li>
-        <li>By using the website, you agree to indemnify and hold harmless Transwide Cellular from any claims arising from your use.</li>
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content" style="max-width: 700px; margin: auto; padding: 40px; background: #fff; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); font-family: 'Arial', sans-serif;">
+    <span class="close" id="closeTermsModal" style="float: right; font-size: 28px; cursor: pointer;">&times;</span>
+    <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">Terms & Conditions</h2>
+    <div style="font-size: 14px; color: #333; line-height: 1.7;">
+
+      <p>By accessing and using this website, and by participating in the promotional competition, you agree to the following Terms & Conditions:</p>
+
+      <ul style="padding-left: 20px; margin-top: 20px;">
+        <li>This website is provided "as is" without any warranties. Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from its use.</li>
+        <li>Participation in the competition is voluntary and entirely at your own risk.</li>
+        <li>Personal information collected via competition entries will be processed in accordance with Vodacom's Privacy Policy and the Protection of Personal Information Act, 4 of 2013 (POPIA).</li>
+        <li><strong>Eligibility:</strong> The competition is open to South African residents aged 18 years and older. Employees of Transwide Cellular, Vodacom, their immediate families, and associated agencies are not eligible to participate.</li>
+        <li><strong>Entry:</strong> Participants must complete the official entry form available at the event or online as specified. Only one entry per person is allowed. Incomplete or illegible entries will be disqualified.</li>
+        <strong>Prizes:</strong>
+          <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+            <li>1st Prize: Premium Braai Set + Vodacom Hamper Pack</li>
+            <li>2nd Prize: Premium Braai Set + Vodacom Gift</li>
+            <li>3rd Prize: Premium Braai Set + Huawei Gift</li>
+          </ul>
+          Prizes are non-transferable and cannot be exchanged for cash.
+        </li>
+        <li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Sionspoort Vleisfees on 2nd August 2025 at 17:00. The draw results are final and no correspondence will be entered into.</li>
+        <li><strong>Promotion Period:</strong> The competition will run from <em>the 2nd of August at 8:00</em>, closing at 16:00 on the day of the draw.</li>
+        <li>Winners will be contacted directly using the contact details provided on the entry form. If a winner cannot be reached after two phone calls, an alternative winner will be selected.</li>
+        <li>By entering, participants agree to allow Vodacom and Transwide Cellular to publish their names and photos for promotional purposes, without any compensation.</li>
+        <li>Neither Vodacom nor Transwide Cellular will be held liable for any technical failures or errors that may affect participation or winner selection.</li>
+        <li>By using this website and participating in the competition, you agree to indemnify and hold harmless Transwide Cellular and Vodacom from any claims, damages, or liabilities arising from your participation.</li>
+        <li><strong>Contact:</strong> For any questions regarding the competition, please contact Transwide Cellular at <em>011 693 1384</em>.</li>
       </ul>
+
     </div>
   </div>
+</div>
+
 
   <script>
     const eventDetailsBtn = document.getElementById('eventDetailsBtn');
