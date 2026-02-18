@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Transwide Cellular | Vodacom Dealership</title>
+  <title>Vodashop Randfontein Cellular | Vodacom Franchise</title>
   <style>
     :root {
       --primary-color: #e60000;
       --glass-bg: rgba(255, 255, 255, 0.2);
-      --glass-blur: blur(10px);
+      --glass-blur: blur(12px);
       --border-radius: 20px;
-      --box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      --box-shadow: 0 10px 35px rgba(0,0,0,0.18);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,18 +20,41 @@
       background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
       color: #333;
       overflow-x: hidden;
+      animation: bodyFade 1s ease forwards;
+    }
+
+    @keyframes bodyFade {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     header {
       background: var(--primary-color);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
+      animation: slideDown 1s ease;
     }
 
-    header img { width: 100px; margin-bottom: 10px; }
-    header h1 { font-size: 32px; margin: 10px 0 5px; letter-spacing: 1px; }
-    header p { font-size: 18px; opacity: 0.9; }
+    @keyframes slideDown {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    header img {
+      width: 110px;
+      margin-bottom: 15px;
+      animation: logoBounce 1s ease;
+    }
+
+    @keyframes logoBounce {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    header h1 { font-size: 32px; margin: 10px 0 5px; letter-spacing: 1px; animation: fadeSlide 1s ease forwards; }
+    header p { font-size: 18px; opacity: 0.9; animation: fadeSlide 1s ease 0.3s forwards; }
 
     .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
 
@@ -41,8 +64,14 @@
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       padding: 25px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       border: 1px solid rgba(255,255,255,0.3);
+      animation: fadeSlideUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .card h2 {
@@ -51,45 +80,54 @@
       font-size: 24px;
       color: var(--primary-color);
       margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover h2 {
+      color: #b30000;
+      transform: scale(1.03);
     }
 
     .info p { margin: 12px 0; font-size: 17px; }
-    .info a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
-    .info a:hover { text-decoration: underline; }
+    .info a { color: var(--primary-color); text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+    .info a:hover { text-decoration: underline; color: #b30000; }
 
     .hours div {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid rgba(255,255,255,0.2);
       font-size: 16px;
+      transition: background 0.3s ease;
     }
 
+    .hours div:hover { background: rgba(230,0,0,0.05); }
     .hours div:last-child { border-bottom: none; }
 
-    .map iframe {
+    .map iframe, .card img {
       width: 100%;
-      height: 320px;
-      border: none;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .map iframe:hover, .card img:hover { transform: scale(1.02); box-shadow: 0 8px 35px rgba(0,0,0,0.25); }
 
     .action-buttons {
       text-align: center;
       margin-top: 40px;
     }
 
-    .call-button, .event-details-button {
+    .call-button, .event-details-button, .enter-draw-button {
       display: inline-block;
-      padding: 12px 20px;
+      padding: 12px 22px;
       font-size: 18px;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: all 0.3s ease;
       margin: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+      transition: all 0.3s ease;
     }
 
     .call-button {
@@ -99,7 +137,7 @@
 
     .call-button:hover {
       background: #b30000;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
     }
 
     .event-details-button {
@@ -110,12 +148,12 @@
     }
 
     .event-details-button:hover {
-      transform: translateY(-2px) scale(1.03);
+      transform: translateY(-2px) scale(1.05);
     }
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(230,0,0,0.6); }
-      70% { box-shadow: 0 0 0 10px rgba(230,0,0,0); }
+      70% { box-shadow: 0 0 0 15px rgba(230,0,0,0); }
       100% { box-shadow: 0 0 0 0 rgba(230,0,0,0); }
     }
 
@@ -125,25 +163,25 @@
       border-radius: var(--border-radius);
       border: 1px solid rgba(255,255,255,0.3);
       box-shadow: var(--box-shadow);
-      max-width: 300px;
+      max-width: 320px;
       margin: 50px auto 20px;
       text-align: center;
       padding: 20px;
       font-size: 14px;
       color: #555;
+      transition: transform 0.3s ease;
     }
+
+    .floating-footer:hover { transform: translateY(-2px) scale(1.02); }
 
     .modal {
       display: none;
       position: fixed;
       z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       overflow: auto;
       background-color: rgba(0,0,0,0.7);
-      animation: fadeIn 0.3s ease;
+      animation: fadeIn 0.4s ease;
     }
 
     .modal-content {
@@ -155,49 +193,21 @@
       position: relative;
       box-shadow: var(--box-shadow);
       background: white;
-      animation: zoomIn 0.4s ease forwards;
-      padding: 20px;
+      animation: zoomIn 0.5s ease forwards;
+      padding: 25px;
       text-align: center;
-    }
-
-    .modal-content a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .modal-content a:hover {
-      text-decoration: underline;
     }
 
     .animated-text {
       margin: 20px 0;
       font-size: 22px;
       font-weight: bold;
-      animation: fadeSlide 2s ease forwards;
+      animation: fadeSlide 1.2s ease forwards;
     }
 
     @keyframes fadeSlide {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .enter-draw-button {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #e60000, #ff3333);
-      color: white;
-      text-decoration: none;
-      margin-top: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-
-    .enter-draw-button:hover {
-      transform: translateY(-2px);
     }
 
     .iframe-container {
@@ -221,7 +231,10 @@
       color: #333;
       cursor: pointer;
       z-index: 1000;
+      transition: color 0.3s ease;
     }
+
+    .close:hover { color: var(--primary-color); }
 
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -243,18 +256,18 @@
         font-size: 16px;
         padding: 10px 16px;
       }
-      .iframe-container iframe {
-        height: 500px;
-      }
+      .iframe-container iframe { height: 500px; }
     }
+
   </style>
 </head>
 <body>
 
+  <!-- Rest of your HTML (content, cards, modals, Terms modal) remains unchanged -->
   <header>
     <img src="VodacomLogo.webp" alt="Vodacom Logo">
-    <h1>Transwide Cellular</h1>
-    <p>Vodacom Approved Dealer</p>
+    <h1>Vodashop Randfontein Cellular</h1>
+    <p>Vodacom Approved Franchise</p>
   </header>
 
   <div class="container">
@@ -265,7 +278,7 @@
       <table style="border-collapse: collapse;">
         <tr>
           <td style="padding-right: 15px; vertical-align: top;"><strong>Phone:</strong></td>
-          <td><a href="tel:0116931384">011 693 1384</a></td>
+          <td><a href="tel:0114122753">011 412 2753</a></td>
         </tr>
         <tr>
           <td style="padding-right: 15px; vertical-align: top;"><strong>Cell:</strong></td>
@@ -286,44 +299,44 @@
     <div class="card">
       <h2>Opening Hours</h2>
       <div class="hours">
-        <div>Monday <span>09:00 - 17:00</span></div>
-        <div>Tuesday <span>09:00 - 17:00</span></div>
-        <div>Wednesday <span>09:00 - 17:00</span></div>
-        <div>Thursday <span>09:00 - 17:00</span></div>
-        <div>Friday <span>09:00 - 17:00</span></div>
-        <div>Saturday <span>09:00 - 13:00</span></div>
-        <div>Sunday & Public Holidays <span>Closed</span></div>
+        <div>Monday <span>09:00 - 17:30</span></div>
+        <div>Tuesday <span>09:00 - 17:30</span></div>
+        <div>Wednesday <span>09:00 - 17:30</span></div>
+        <div>Thursday <span>09:00 - 17:30</span></div>
+        <div>Friday <span>09:00 - 18:00</span></div>
+        <div>Saturday <span>09:00 - 15:00</span></div>
+        <div>Sunday <span>09:00 - 14:00</span></div>
       </div>
     </div>
 
     <!-- Shop Photos -->
     <div class="card">
       <h2>Our Shop</h2>
-      <img src="Transwide2.webp" alt="Transwide Shop" style="width:100%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+      <img src="Transwide2.webp" alt="Transwide Shop" style="margin-top: 15px;">
     </div>
 
     <div class="card">
       <h2>Our Shop Inside</h2>
-      <img src="Transwide.Store.webp" alt="Transwide Shop Inside" style="width:100%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+      <img src="Transwide.Store.webp" alt="Transwide Shop Inside" style="margin-top: 15px;">
     </div>
 
     <!-- Google Maps -->
     <div class="card map">
       <h2>Our Location</h2>
-      <iframe src="https://maps.google.com/maps?q=-26.168324,27.698573&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1855.3229783693123!2d27.691927527814673!3d-26.171719666911486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9597cda6399341%3A0xf087c01c5ec9f2a2!2sTambotie%20Mall!5e1!3m2!1sen!2sza!4v1771419600174!5m2!1sen!2sza" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- QR Code WhatsApp -->
     <div class="card map" style="text-align: center;">
       <h2>Scan the QR Code For WhatsApp.</h2>
-      <img src="Whatsapp_QR_CODE.webp" alt="Cell Whatsapp Code" style="width:30%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+      <img src="Whatsapp_QR_CODE.webp" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/BKRFBHSOSCYWB1?src=qr" target="_blank">082 977 9110</a></p>
     </div>
 
     <!-- QR Code Booklet -->
     <div class="card map" style="text-align: center;">
       <h2>View Latest Vodacom Booklet</h2>
-      <img src="QR2_CODE_BOOKLET.webp" alt="Vodacom Booklet" style="width:30%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 15px;">
+      <img src="QR2_CODE_BOOKLET.webp" alt="Vodacom Booklet" style="width:30%; margin-top: 15px;">
       <p><a href="https://l.ead.me/bbcDFO" target="_blank">Vodacom Booklet</a></p>
     </div>
 
@@ -341,10 +354,10 @@
   <!-- Floating Footer -->
   <div class="floating-footer">
     <p style="font-size: 12px; color: #777; margin-bottom: 10px;">
-      E & OE <br> Disclaimer: Transwide Cellular and Vodacom are not liable for any damages or losses incurred from the use of this website. Enter and participate at your own risk.
+      E & OE <br> Disclaimer: Vodashop Randfontein Cellular and Vodacom are not liable for any damages or losses incurred from the use of this website. Enter and participate at your own risk.
     </p>
     <a href="#" id="termsLink" style="font-size: 12px; color: var(--primary-color); text-decoration: underline;">Terms & Conditions</a><br>
-    &copy; 2025 Transwide Cellular <br>Vodacom Dealership Partner
+    &copy; 2026 Vodashop Randfontein Cellular <br>Vodacom Franchise Partner
   </div>
 
   <div class="floating-footer">
@@ -359,9 +372,9 @@
       <span class="close" id="closeEventModal">&times;</span>
       <p>Join us at <a href="https://gouefees.co.za/" target="_blank">Randfontein Gouefees</a> on the 27, 28 February & 1st of March 2026.</p>
       <div class="animated-text">
-        Transwide Cellular Competition!<br>
-        Come visit our stand number 255 - 256 next to the Buffelsfontein Stage.<br>
-        Competition closes at 16:30.
+        Vodashop Randfontein Cellular Competition!<br>
+        Come visit our Vodacom Garden at .<br>
+        Competition closes at 13:30.
       </div>
       <button id="enterPrizeBtn" class="enter-draw-button">Enter Prize</button>
       <div id="prizeFormContainer" class="iframe-container">
@@ -378,27 +391,24 @@
       <div style="font-size: 14px; color: #333; line-height: 1.7;">
         <p>By accessing and using this website, and by participating in the promotional competition, you agree to the following Terms & Conditions:</p>
         <ul style="padding-left: 20px; margin-top: 20px;">
-          <li>This website is provided "as is" without any warranties. Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from its use.</li>
+          <li>This website is provided "as is" without any warranties. Vodashop Randfontein Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from its use.</li>
           <li>Participation in the competition is voluntary and entirely at your own free will.</li>
           <li>Personal information collected via competition entries will be processed in accordance with Vodacom's Privacy Policy and the Protection of Personal Information Act, 4 of 2013 (POPIA).</li>
-          <li><strong>Eligibility:</strong> The competition is open to South African residents aged 16 years and older. Employees of Transwide Cellular, Vodacom, their immediate families, and associated agencies are not eligible to participate.</li>
+          <li><strong>Eligibility:</strong> The competition is open to South African residents aged 16 years and older. Employees of Vodashop Randfontein Cellular, Vodacom, their immediate families, and associated agencies are not eligible to participate.</li>
           <li><strong>Entry:</strong> Participants must complete the official entry form available online as specified. Only one entry per person is allowed. Incomplete or illegible entries will be disqualified.</li>
-          <strong>Prizes:</strong>
+          <li><strong>Prizes:</strong></li>
             <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
-              <li>1st Prize: Braai + Premium Braai Set + Vodacom Hamper Pack</li>
-              <li>2nd Prize: Premium Braai Set + Vodacom Gift</li>
-              <li>3rd Prize: Premium Braai Set + Huawei Gift</li>
+              <li>Prize: Braai + Premium Braai Set + Vodacom Hamper Pack</li>
             </ul>
             Prizes are non-transferable and cannot be exchanged for cash.
           </li>
-<li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Vodacom / Transwide Cellular stand on 1st March 2026 at 13:00. The draw results are final and no correspondence will be entered into.</li>
-<li><strong>Promotion Period:</strong> The competition will run from <em>27 February 2026 at 08:00</em> until <em>13:00 on 1 March 2026</em>.</li>
-
+          <li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Vodacom / Vodashop Randfontein Cellular stand on 1st March 2026 at 13:30. The draw results are final and no correspondence will be entered into.</li>
+          <li><strong>Promotion Period:</strong> The competition will run from <em>27 February 2026 at 08:00</em> until <em>13:00 on 1 March 2026</em>.</li>
           <li>Winners will be contacted directly using the contact details provided on the entry form. If a winner cannot be reached after two phone calls, an alternative winner will be selected.</li>
-          <li>By entering, participants agree to allow Vodacom and Transwide Cellular to publish their names and photos on Transwide Cellular for promotional purposes.</li>
-          <li>Neither Vodacom nor Transwide Cellular will be held liable for any technical failures or errors that may affect participation or winner selection.</li>
-          <li>By using this website and participating in the competition, you agree to indemnify and hold harmless Transwide Cellular and Vodacom from any claims, damages, or liabilities arising from your participation.</li>
-          <li><strong>Contact:</strong> For any questions regarding the competition, please contact Transwide Cellular at <em>011 693 1384</em>.</li>
+          <li>By entering, participants agree to allow Vodacom and Vodashop Randfontein Cellular to publish their names and photos on Vodashop Randfontein Cellular for promotional purposes.</li>
+          <li>Neither Vodacom nor Vodashop Randfontein Cellular will be held liable for any technical failures or errors that may affect participation or winner selection.</li>
+          <li>By using this website and participating in the competition, you agree to indemnify and hold harmless Vodashop Randfontein Cellular and Vodacom from any claims, damages, or liabilities arising from your participation.</li>
+          <li><strong>Contact:</strong> For any questions regarding the competition, please contact Vodashop Randfontein Cellular at <em>011 412 2753</em>.</li>
           <li><strong>E & OE</strong></li>
         </ul>
       </div>
