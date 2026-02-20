@@ -259,11 +259,19 @@
       .iframe-container iframe { height: 500px; }
     }
 
+    /* ===== ADDED: RED & BOLD LINK FOR EVENT MODAL ===== */
+    #eventModal a {
+      color: #e60000;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    #eventModal a:hover {
+      color: #b30000;
+    }
+
   </style>
 </head>
 <body>
-
-  <!-- Rest of your HTML (content, cards, modals, Terms modal) remains unchanged -->
   <header>
     <img src="VodacomLogo.webp" alt="Vodacom Logo">
     <h1>Vodashop Randfontein Cellular</h1>
@@ -286,12 +294,13 @@
         </tr>
         <tr>
           <td style="padding-right: 15px; vertical-align: top;"><strong>Email:</strong></td>
-          <td><a href="mailto:twccorporate@tiscali.co.za">twccorporate@tiscali.co.za</a></td>
+          <td><a href="mailto:vodacomshop.randfontein@vodadealers.co.za">vodacomshop.randfontein@vodadealers.co.za</a></td>
         </tr>
-        <tr>
-          <td style="padding-right: 15px; vertical-align: top;"><strong>Address:</strong></td>
-          <td><strong>Shop 2 @ Green Mile, Kenneth Rd, Greenhills,Randfontein, 1759</strong></td>
-        </tr>
+<tr>
+  <td style="padding-right: 15px; vertical-align: top;"><strong>Address:</strong></td>
+  <td><strong style="color: #E60000;">Shop 16 @ Tambotie Mall, Malan Rd, Randgate, Randfontein, 1759</strong></td>
+</tr>
+
       </table>
     </div>
 
@@ -376,7 +385,8 @@
         Come visit our Vodacom Garden at .<br>
         Competition closes at 13:30.
       </div>
-      <button id="enterPrizeBtn" class="enter-draw-button">Enter Prize</button>
+      <button id="enterPrizeBtn" class="event-details-button">Enter Prize</button>
+
       <div id="prizeFormContainer" class="iframe-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVzRG3emf8rOSXxYGCjq0svtiT0dqeWnIiaALuEfqlumN_rA/viewform?usp=dialog"></iframe>
       </div>
@@ -453,6 +463,5 @@
       if (event.target == termsModal) termsModal.style.display = "none";
     };
   </script>
-
 </body>
 </html>
