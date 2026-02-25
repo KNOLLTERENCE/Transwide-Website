@@ -269,6 +269,12 @@
       color: #b30000;
     }
 
+    /* ===== SLIDESHOW STYLES ===== */
+    .slideshow-container { position: relative; overflow: hidden; border-radius: 15px; }
+    .slide { width: 100%; display: none; border-radius: 15px; }
+    .prev, .next { position: absolute; top: 50%; font-size: 24px; color: white; cursor: pointer; user-select: none; transform: translateY(-50%); }
+    .prev { left: 10px; }
+    .next { right: 10px; }
   </style>
 </head>
 <body>
@@ -298,9 +304,8 @@
         </tr>
 <tr>
   <td style="padding-right: 15px; vertical-align: top;"><strong>Address:</strong></td>
-  <td><strong style="color: #E60000;">Shop 16 @ Tambotie Mall, Malan Rd, Randgate, Randfontein, 1759</strong></td>
+  <td><strong style="color: #E60000;">Shop 16 @ Tambotie Mall, Corner of  Malan Street, Greenhills, Randfontein, 1759</strong></td>
 </tr>
-
       </table>
     </div>
 
@@ -318,15 +323,15 @@
       </div>
     </div>
 
-    <!-- Shop Photos -->
-    <div class="card">
+    <!-- Slideshow Shop Photos -->
+    <div class="card" id="shopSlideshow">
       <h2>Our Shop</h2>
-      <img src="Transwide2.webp" alt="Transwide Shop" style="margin-top: 15px;">
-    </div>
-
-    <div class="card">
-      <h2>Our Shop Inside</h2>
-      <img src="Transwide.Store.webp" alt="Transwide Shop Inside" style="margin-top: 15px;">
+      <div class="slideshow-container">
+        <img class="slide" src="Transwide2.webp.jpg" alt="Transwide Shop">
+        <img class="slide" src="Transwide.Store.webp.jpg" alt="Transwide Shop Inside">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </div>
     </div>
 
     <!-- Google Maps -->
@@ -338,20 +343,20 @@
     <!-- QR Code WhatsApp -->
     <div class="card map" style="text-align: center;">
       <h2>Scan the QR Code For WhatsApp.</h2>
-      <img src="Whatsapp_QR_CODE.webp" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
+      <img src="Whatsapp_QR_CODE.webp.jpg" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/BKRFBHSOSCYWB1?src=qr" target="_blank">082 977 9110</a></p>
     </div>
 
     <!-- QR Code Booklet -->
     <div class="card map" style="text-align: center;">
       <h2>View Latest Vodacom Booklet</h2>
-      <img src="QR2_CODE_BOOKLET.webp" alt="Vodacom Booklet" style="width:30%; margin-top: 15px;">
+      <img src="QR2_CODE_BOOKLET.webp.jpg" alt="Vodacom Booklet" style="width:30%; margin-top: 15px;">
       <p><a href="https://l.ead.me/bbcDFO" target="_blank">Vodacom Booklet</a></p>
     </div>
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <a href="tel:0116931384" class="call-button">Call Now</a>
+      <a href="tel:0114122753" class="call-button">Call Now</a>
     </div>
 
     <div class="action-buttons">
@@ -382,8 +387,8 @@
       <p>Join us at <a href="https://gouefees.co.za/" target="_blank">Randfontein Gouefees</a> on the 27, 28 February & 1st of March 2026.</p>
       <div class="animated-text">
         Vodashop Randfontein Cellular Competition!<br>
-        Come visit our Vodacom Garden at .<br>
-        Competition closes at 13:30.
+        Come visit our Vodacom Garden at Entrance 2.<br>
+        Draw date: 1 March 2026 at 13:00.
       </div>
       <button id="enterPrizeBtn" class="event-details-button">Enter Prize</button>
 
@@ -462,6 +467,35 @@
       }
       if (event.target == termsModal) termsModal.style.display = "none";
     };
+
+    // ===== SLIDESHOW SCRIPT =====
+    let slideIndex = 0;
+    const slides = document.querySelectorAll("#shopSlideshow .slide");
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => s.style.display = i === index ? "block" : "none");
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+      showSlide(slideIndex);
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Navigation buttons
+    document.querySelector("#shopSlideshow .next").onclick = nextSlide;
+    document.querySelector("#shopSlideshow .prev").onclick = prevSlide;
+
+    // Show first slide initially
+    showSlide(slideIndex);
   </script>
 </body>
 </html>
