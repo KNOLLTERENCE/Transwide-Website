@@ -88,7 +88,12 @@
       transform: scale(1.03);
     }
 
-    .info p { margin: 12px 0; font-size: 17px; }
+    .info p {
+      margin: 12px 0;
+      font-size: 17px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
     .info a { color: var(--primary-color); text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
     .info a:hover { text-decoration: underline; color: #b30000; }
 
@@ -275,6 +280,26 @@
     .prev, .next { position: absolute; top: 50%; font-size: 24px; color: white; cursor: pointer; user-select: none; transform: translateY(-50%); }
     .prev { left: 10px; }
     .next { right: 10px; }
+
+    @media (max-width: 600px) {
+  .card {
+    padding: 20px 15px;
+  }
+
+  .info p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+.info table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.info td {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
   </style>
 </head>
 <body>
@@ -338,9 +363,9 @@
 <div class="card shopSlideshow">
   <h2>Accessories on Special</h2>
   <div class="slideshow-container">
-    <img class="slide" src="Accessories1.jpg" alt="Accessories1">
-    <img class="slide" src="Accessories2.jpg" alt="Accessories2">
-    <img class="slide" src="Accessories3.jpg" alt="Accessories3">
+    <img class="slide" src="Accessories1.jepg" alt="Accessories1">
+    <img class="slide" src="Accessories2.jepg" alt="Accessories2">
+    <img class="slide" src="Accessories3.jepg" alt="Accessories3">
     <span class="prev">&#10094;</span>
     <span class="next">&#10095;</span>
   </div>
@@ -356,7 +381,7 @@
     <div class="card map" style="text-align: center;">
       <h2>Scan the QR Code For WhatsApp.</h2>
       <img src="WHATSAPP.jpeg" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
-      <p><strong>WhatsApp:</strong> 082 977 9110</p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/BKRFBHSOSCYWB1?src=qr" target="_blank">082 977 9110</a></p>
     </div>
 
     <!-- QR Code Booklet -->
@@ -513,4 +538,3 @@
 </script>
 </body>
 </html>
-
