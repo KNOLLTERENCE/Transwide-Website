@@ -323,16 +323,28 @@
       </div>
     </div>
 
-    <!-- Slideshow Shop Photos -->
-    <div class="card" id="shopSlideshow">
-      <h2>Our Shop</h2>
-      <div class="slideshow-container">
-        <img class="slide" src="Transwide2.webp" alt="Transwide Shop">
-        <img class="slide" src="Transwide.Store.webp" alt="Transwide Shop Inside">
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
-      </div>
-    </div>
+<!-- Slideshow Shop Photos -->
+<div class="card shopSlideshow">
+  <h2>Our Shop</h2>
+  <div class="slideshow-container">
+    <img class="slide" src="VodashopInside.jpeg" alt="Voda Inside Shop">
+    <img class="slide" src="VodashopOutside.jpeg" alt="Voda Outside">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+</div>
+
+<!-- Slideshow Accessories -->
+<div class="card shopSlideshow">
+  <h2>Accessories on Special</h2>
+  <div class="slideshow-container">
+    <img class="slide" src="Accessories1.jpg" alt="Accessories1">
+    <img class="slide" src="Accessories2.jpg" alt="Accessories2">
+    <img class="slide" src="Accessories3.jpg" alt="Accessories3">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+</div>
 
     <!-- Google Maps -->
     <div class="card map">
@@ -343,14 +355,14 @@
     <!-- QR Code WhatsApp -->
     <div class="card map" style="text-align: center;">
       <h2>Scan the QR Code For WhatsApp.</h2>
-      <img src="Whatsapp_QR_CODE.webp" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
+      <img src="Whatsapp_QR_CODE.webp.jpg" alt="Cell Whatsapp Code" style="width:30%; margin-top: 15px;">
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/BKRFBHSOSCYWB1?src=qr" target="_blank">082 977 9110</a></p>
     </div>
 
     <!-- QR Code Booklet -->
     <div class="card map" style="text-align: center;">
       <h2>View Latest Vodacom Booklet</h2>
-      <img src="QR2_CODE_BOOKLET.webp" alt="Vodacom Booklet" style="width:30%; margin-top: 15px;">
+      <img src="QR2_CODE_BOOKLET.webp.jpg" alt="Vodacom Booklet" style="width:30%; margin-top: 15px;">
       <p><a href="https://l.ead.me/bbcDFO" target="_blank">Vodacom Booklet</a></p>
     </div>
 
@@ -469,34 +481,35 @@
     };
 
     // ===== SLIDESHOW SCRIPT =====
-    let slideIndex = 0;
-    const slides = document.querySelectorAll("#shopSlideshow .slide");
-    const totalSlides = slides.length;
 
-    function showSlide(index) {
-      slides.forEach((s, i) => s.style.display = i === index ? "block" : "none");
+  document.querySelectorAll('.shopSlideshow').forEach(slideshow => {
+    let index = 0;
+    const slides = slideshow.querySelectorAll('.slide');
+    const next = slideshow.querySelector('.next');
+    const prev = slideshow.querySelector('.prev');
+
+    function showSlide(i) {
+      slides.forEach((s, idx) => {
+        s.style.display = idx === i ? 'block' : 'none';
+      });
     }
 
     function nextSlide() {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      showSlide(slideIndex);
+      index = (index + 1) % slides.length;
+      showSlide(index);
     }
 
     function prevSlide() {
-      slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-      showSlide(slideIndex);
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
     }
 
-    // Auto-slide every 5 seconds
+    next.onclick = nextSlide;
+    prev.onclick = prevSlide;
+
+    showSlide(index);
     setInterval(nextSlide, 5000);
-
-    // Navigation buttons
-    document.querySelector("#shopSlideshow .next").onclick = nextSlide;
-    document.querySelector("#shopSlideshow .prev").onclick = prevSlide;
-
-    // Show first slide initially
-    showSlide(slideIndex);
-  </script>
+  });
+</script>
 </body>
 </html>
-
