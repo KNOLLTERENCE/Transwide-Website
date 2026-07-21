@@ -528,6 +528,114 @@ line-height:1.4;
 
 }
 
+/* ==========================
+TERMS MODAL
+========================== */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+z-index:9999;
+
+padding:30px;
+
+overflow:auto;
+
+}
+
+.modal-content{
+
+background:white;
+
+max-width:800px;
+
+margin:40px auto;
+
+padding:35px;
+
+border-radius:20px;
+
+position:relative;
+
+animation:popup .3s ease;
+
+}
+
+.modal-body{
+
+max-height:65vh;
+
+overflow-y:auto;
+
+padding-right:10px;
+
+}
+
+.modal-body p{
+
+margin-bottom:18px;
+
+line-height:1.7;
+
+color:#555;
+
+}
+
+.close-modal{
+
+position:absolute;
+
+top:18px;
+
+right:25px;
+
+font-size:35px;
+
+cursor:pointer;
+
+color:#999;
+
+transition:.3s;
+
+}
+
+.close-modal:hover{
+
+color:#e60000;
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
 /*==========================
 FEATURES
 ==========================*/
@@ -1716,7 +1824,7 @@ right:18px;
 
 <span><i class="fas fa-phone"></i> (011) 693-1384</span>
 
-<span><i class="fas fa-envelope"></i> transwidecellular.admin@vodadealers.co.za</span>
+<span><i class="fas fa-envelope"></i> <a href="mailto:transwidecellular.admin@vodadealers.co.za">transwidecellular.admin@vodadealers.co.za</a></span>
 
 </div>
 
@@ -1817,17 +1925,9 @@ Enter Competition
 
 <div class="hero-stat">
 
-<h2>20+</h2>
+<h2>30+</h2>
 
 <p>Years of Trusted Service</p>
-
-</div>
-
-<div class="hero-stat">
-
-<h2>1000+</h2>
-
-<p>Happy Customers</p>
 
 </div>
 
@@ -1867,7 +1967,7 @@ Why Choose <span>Transwide Cellular</span>
 <p class="section-subtitle">
 
 Whether you're looking for your next smartphone,
-business connectivity or reliable after-sales support,
+business connectivity or reliable sales support,
 our experienced team is here to help.
 
 </p>
@@ -2097,8 +2197,8 @@ Win Amazing Prizes!
 
 <p class="section-subtitle">
 
-Visit our store, scan the QR code and stand a chance to win one of
-our exclusive Transwide Cellular giveaway hampers.
+Visit our stand, scan the QR code and stand a chance to win incredible prizes and exclusive giveaways from Transwide Cellular, Vivo, Huawei, and Bush & Buck Game Lodge.
+
 
 </p>
 
@@ -2106,14 +2206,13 @@ our exclusive Transwide Cellular giveaway hampers.
 
 <div class="prize-card">
 
-<i class="fas fa-fire"></i>
+<i class="fas fa-gift"></i>
 
-<h3>Premium Braai Hamper</h3>
+<h3>Vivo, Huawei & Bush 'n Buck</h3>
 
 <p>
 
-A premium outdoor hamper including a portable braai and exciting
-extras.
+Experience the excitement of winning with exclusive prizes and giveaways from Vivo, Huawei and Bush & Buck Game Lodge
 
 </p>
 
@@ -2121,7 +2220,7 @@ extras.
 
 <div class="prize-card">
 
-<i class="fas fa-mobile-screen-button"></i>
+<i class="fas fa-gift"></i>
 
 <h3>Vodacom Hamper</h3>
 
@@ -2337,7 +2436,7 @@ We're always happy to help.
 
 Shop 2, Green Mile<br>
 Kenneth Road<br>
-Greenhills, Randfontein
+Greenhills, Randfontein 1759.
 
 </p>
 
@@ -2374,7 +2473,9 @@ Greenhills, Randfontein
 
 <p>
 
+<a href="mailto:transwidecellular.admin@vodadealers.co.za">
 transwidecellular.admin@vodadealers.co.za
+</a>
 
 </p>
 
@@ -2521,7 +2622,7 @@ Shop 2, Green Mile<br>
 
 Kenneth Road<br>
 
-Greenhills, Randfontein
+Greenhills, Randfontein, 1759
 
 </p>
 
@@ -2529,8 +2630,14 @@ Greenhills, Randfontein
 
 <i class="fas fa-phone"></i>
 
-(011) 693-1384
-082 977 9110
+<a href="tel:+27116931384">(011) 693-1384</a>
+
+</p>
+<p>
+
+<i class="fas fa-phone"></i>
+
+<a href="tel:+27829779110">082 977 9110</a>
 
 </p>
 
@@ -2538,7 +2645,9 @@ Greenhills, Randfontein
 
 <i class="fas fa-envelope"></i>
 
+<a href="mailto:transwidecellular.admin@vodadealers.co.za">
 transwidecellular.admin@vodadealers.co.za
+</a>
 
 </p>
 
@@ -2564,7 +2673,9 @@ Public Holidays : Closed
 &copy; <span id="year"></span> Transwide Cellular |
 Vodacom Approved Dealer |
 All Rights Reserved.<br>
-Designed by IT App SOLUTIONS
+Designed by IT App SOLUTIONS |
+<a href="#" id="openTerms">Terms & Conditions</a><br>
+E&OE
 
 </p>
 
@@ -2607,6 +2718,49 @@ aria-label="Back to Top"
 <i class="fas fa-arrow-up"></i>
 
 </button>
+
+<!-- TERMS & CONDITIONS POPUP -->
+
+<div id="termsModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-modal">&times;</span>
+
+<h2>Competition Terms & Conditions</h2>
+
+<div class="modal-body">
+
+<p><strong>1.</strong> Competition is open to South African residents only.</p>
+
+<p><strong>2.</strong> Entrants must be 18 years or older or have permission from a parent or guardian.</p>
+
+<p><strong>3.</strong> Entry is free by scanning the official Transwide Cellular QR Code.</p>
+
+<p><strong>4.</strong> Only one entry per person unless otherwise stated.</p>
+
+<p><strong>5.</strong> Winners will be selected by random draw.</p>
+
+<p><strong>6.</strong> Winners will be contacted using the details supplied.</p>
+
+<p><strong>7.</strong> Prizes are not transferable and may not be exchanged for cash.</p>
+
+<p><strong>8.</strong> Transwide Cellular reserves the right to substitute prizes of equal value if necessary.</p>
+
+<p><strong>9.</strong> By entering, participants consent to the use of their name and photographs for promotional purposes.</p>
+
+<p><strong>10.</strong> The judges' decision is final and no correspondence will be entered into.</p>
+
+<p><strong>11.</strong> Competition closes on 1 March 2026 before the live draw.</p>
+
+<p><strong>12.</strong> Winners must collect prizes within 30 days unless otherwise arranged.</p>
+
+</div>
+
+</div>
+
+</div>
+
 <script>
 
 
@@ -2834,6 +2988,40 @@ competitionForm.scrollIntoView({
 });
 
 competitionButton.style.display = "none";
+
+});
+
+/* ==========================
+TERMS POPUP
+========================== */
+
+const termsModal = document.getElementById("termsModal");
+
+const openTerms = document.getElementById("openTerms");
+
+const closeTerms = document.querySelector(".close-modal");
+
+openTerms.addEventListener("click", function(e){
+
+e.preventDefault();
+
+termsModal.style.display = "block";
+
+});
+
+closeTerms.addEventListener("click", function(){
+
+termsModal.style.display = "none";
+
+});
+
+window.addEventListener("click", function(e){
+
+if(e.target === termsModal){
+
+termsModal.style.display = "none";
+
+}
 
 });
 
