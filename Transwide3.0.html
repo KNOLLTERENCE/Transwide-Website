@@ -1,0 +1,2875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transwide Cellular | Vodacom Approved Dealer</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+:root{
+
+--vodared:#e60000;
+--darkred:#b40000;
+--black:#111;
+--light:#f8f8f8;
+
+--shadow:
+0 20px 45px rgba(0,0,0,.18);
+
+}
+
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#efefef;
+
+color:#222;
+
+overflow-x:hidden;
+
+}
+
+
+
+
+
+/* =====================
+LOADER
+===================== */
+
+
+#loader{
+
+display:none;
+
+}
+
+
+
+.loader-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:7px solid #eee;
+
+border-top:7px solid var(--vodared);
+
+animation:spin 1s linear infinite;
+
+}
+
+
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+/* =====================
+NAVIGATION
+===================== */
+
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:80px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+
+padding:0 7%;
+
+
+background:
+
+rgba(255,255,255,.85);
+
+
+backdrop-filter:blur(18px);
+
+
+box-shadow:
+
+0 5px 20px rgba(0,0,0,.08);
+
+
+z-index:1000;
+
+
+}
+
+
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo img{
+
+height:55px;
+
+}
+
+
+
+.logo h2{
+
+font-size:25px;
+
+color:var(--vodared);
+
+}
+
+
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+
+
+nav ul li a{
+
+text-decoration:none;
+
+color:#333;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+
+
+nav ul li a:hover{
+
+color:var(--vodared);
+
+}
+
+
+
+.contact-btn{
+
+
+background:var(--vodared);
+
+color:white;
+
+padding:13px 30px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+
+}
+
+
+
+
+
+/* =====================
+HERO
+===================== */
+
+
+.hero{
+
+height:85vh;
+
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("Transwide2.webp.jpg")
+
+center/cover;
+
+
+display:flex;
+
+align-items:center;
+
+
+padding:0 8%;
+
+
+position:relative;
+
+
+}
+
+
+
+.hero-content{
+
+max-width:750px;
+
+color:white;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+
+
+.hero small{
+
+
+display:inline-block;
+
+
+padding:8px 20px;
+
+
+border-radius:50px;
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:68px;
+
+
+line-height:1.1;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.hero h1 span{
+
+
+color:#ff3b3b;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:19px;
+
+
+line-height:1.8;
+
+
+color:#eee;
+
+
+margin-bottom:40px;
+
+
+}
+
+
+
+
+
+.hero-buttons{
+
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+
+}
+
+
+
+.primary{
+
+
+background:var(--vodared);
+
+color:white;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+
+
+.secondary{
+
+
+border:2px solid white;
+
+color:white;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+}
+
+
+
+.primary:hover{
+
+background:var(--darkred);
+
+}
+
+
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+}
+
+
+
+
+
+/* =====================
+STATS
+===================== */
+
+
+.stats{
+
+
+margin-top:-70px;
+
+
+position:relative;
+
+z-index:5;
+
+
+display:grid;
+
+
+grid-template-columns:repeat(4,1fr);
+
+
+gap:25px;
+
+
+padding:0 8%;
+
+
+}
+
+
+
+.stat{
+
+
+background:white;
+
+
+padding:35px;
+
+
+border-radius:25px;
+
+
+box-shadow:var(--shadow);
+
+
+text-align:center;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.stat:hover{
+
+
+transform:translateY(-10px);
+
+
+}
+
+
+
+.stat h2{
+
+
+font-size:45px;
+
+
+color:var(--vodared);
+
+
+}
+
+
+
+.stat p{
+
+
+color:#666;
+
+
+}
+
+
+
+
+
+/* =====================
+GENERAL SECTIONS
+===================== */
+
+
+section{
+
+
+padding:110px 8%;
+
+
+}
+
+
+
+.section-title{
+
+
+text-align:center;
+
+
+margin-bottom:70px;
+
+
+}
+
+
+
+.section-title h2{
+
+
+font-size:46px;
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.section-title p{
+
+
+color:#666;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+/* =====================
+FEATURE CARDS
+===================== */
+
+
+.features{
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(280px,1fr));
+
+
+gap:35px;
+
+
+}
+
+
+
+.feature{
+
+
+background:white;
+
+
+padding:40px;
+
+
+border-radius:28px;
+
+
+box-shadow:var(--shadow);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.feature:hover{
+
+
+transform:translateY(-12px);
+
+
+}
+
+
+
+.feature-icon{
+
+
+width:75px;
+
+
+height:75px;
+
+
+background:
+
+linear-gradient(
+135deg,
+var(--vodared),
+#ff5555
+);
+
+
+border-radius:20px;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+font-size:32px;
+
+
+color:white;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.feature h3{
+
+
+font-size:25px;
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.feature p{
+
+
+color:#666;
+
+
+line-height:1.8;
+
+
+}
+
+/* =====================
+DEALS SECTION
+===================== */
+
+
+.deals-preview{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+
+
+.deal-card{
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+
+
+.deal-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+
+
+.deal-card img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+}
+
+
+
+.deal-content{
+
+padding:30px;
+
+}
+
+
+
+.deal-content h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.deal-content p{
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+
+
+.price{
+
+font-size:34px;
+
+font-weight:700;
+
+color:var(--vodared);
+
+margin:20px 0;
+
+}
+
+
+
+.view-btn{
+
+display:inline-block;
+
+background:var(--vodared);
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+}
+
+
+
+
+
+/* =====================
+ACCESSORIES
+===================== */
+
+
+.accessories{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.accessory{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+
+.accessory:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.accessory-icon{
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.accessory h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+
+/* =====================
+STORE INFO
+===================== */
+
+
+.store-box{
+
+background:white;
+
+border-radius:30px;
+
+padding:50px;
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.store-box h3{
+
+color:var(--vodared);
+
+margin-bottom:20px;
+
+}
+
+
+.store-box p{
+
+line-height:2;
+
+color:#555;
+
+}
+
+
+/* =====================
+MOBILE
+===================== */
+
+
+@media(min-width:430px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+nav ul{
+
+display:none;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.hero{
+
+text-align:center;
+
+justify-content:center;
+
+}
+
+/* =====================================
+   TRANSWIDE MOBILE RESPONSIVE UPDATE
+===================================== */
+
+
+/* LARGE SCREENS */
+
+@media(min-width:1400px){
+
+.hero h1{
+
+font-size:78px;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+
+section{
+
+padding-left:12%;
+padding-right:12%;
+
+}
+
+}
+
+
+/* TABLETS */
+
+@media(max-width:1024px){
+
+
+nav{
+
+padding:0 4%;
+
+}
+
+
+.logo h2{
+
+font-size:20px;
+
+}
+
+
+.hero{
+
+padding:120px 5% 80px;
+
+}
+
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+
+.hero p{
+
+font-size:17px;
+
+}
+
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+padding:0 5%;
+
+}
+
+
+section{
+
+padding:80px 5%;
+
+}
+
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+
+.deals-preview{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+/* MOBILE PHONES */
+
+@media(max-width:600px){
+
+
+body{
+
+overflow-x:hidden;
+
+}
+
+
+/* NAV */
+
+nav{
+
+height:70px;
+
+padding:0 20px;
+
+}
+
+
+.logo img{
+
+height:42px;
+
+}
+
+
+.logo h2{
+
+font-size:17px;
+
+}
+
+
+.contact-btn{
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:auto;
+
+min-height:100vh;
+
+padding:120px 25px 80px;
+
+text-align:center;
+
+}
+
+
+.hero-content{
+
+width:100%;
+
+}
+
+
+.hero small{
+
+font-size:12px;
+
+}
+
+
+.hero h1{
+
+font-size:34px;
+
+line-height:1.2;
+
+}
+
+
+.hero p{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+
+.primary,
+.secondary{
+
+width:100%;
+
+text-align:center;
+
+padding:16px 25px;
+
+}
+
+
+
+/* STATS */
+
+
+.stats{
+
+margin-top:-30px;
+
+grid-template-columns:1fr;
+
+padding:0 20px;
+
+}
+
+
+.stat{
+
+padding:25px;
+
+}
+
+
+.stat h2{
+
+font-size:35px;
+
+}
+
+
+
+/* SECTIONS */
+
+
+section{
+
+padding:70px 20px;
+
+}
+
+
+.section-title{
+
+margin-bottom:40px;
+
+}
+
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+
+.section-title p{
+
+font-size:15px;
+
+}
+
+
+
+/* CARDS */
+
+
+.features{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+
+.feature{
+
+padding:30px;
+
+}
+
+
+.feature h3{
+
+font-size:22px;
+
+}
+
+
+
+/* DEALS */
+
+
+.deals-preview{
+
+grid-template-columns:1fr;
+
+}
+
+
+.deal-card img{
+
+height:220px;
+
+}
+
+
+.deal-content h3{
+
+font-size:22px;
+
+}
+
+
+.price{
+
+font-size:30px;
+
+}
+
+
+
+/* COMPETITION */
+
+
+#competition div{
+
+padding:35px 20px !important;
+
+}
+
+
+#competition h2{
+
+font-size:28px !important;
+
+}
+
+
+
+/* CONTACT */
+
+
+textarea{
+
+height:140px !important;
+
+}
+
+
+/* FOOTER */
+
+
+footer{
+
+padding:50px 20px !important;
+
+text-align:center;
+
+}
+
+
+footer h2{
+
+font-size:25px;
+
+}
+
+
+/*TIME*/
+.hours{
+margin-top:35px;
+border-top:1px solid #eee;
+padding-top:25px;
+}
+
+.hours div{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid #f2f2f2;
+}
+
+.hours span{
+font-weight:600;
+color:#e60000;
+}
+
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media(max-width:380px){
+
+
+.hero h1{
+
+font-size:32px;
+
+}
+
+
+.logo h2{
+
+display:none;
+
+}
+
+
+.hero p{
+
+font-size:14px;
+
+}
+
+
+.primary,
+.secondary{
+
+font-size:14px;
+
+}
+
+
+}
+
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<!-- LOADER -->
+
+<div id="loader">
+
+<div class="loader-circle"></div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+
+<div class="logo">
+
+<img src="VodacomLogo.webp">
+
+<h2>
+Transwide Cellular
+</h2>
+
+</div>
+
+
+<ul>
+
+<li>
+<a href="#top">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="#deals">
+Deals
+</a>
+</li>
+
+
+<li>
+<a href="#phones">
+Phones
+</a>
+</li>
+
+
+<li>
+<a href="#services">
+Services
+</a>
+</li>
+
+
+<li>
+<a href="#competition">
+Competition
+</a>
+</li>
+
+
+<li>
+<a href="#contact">
+Contact
+</a>
+</li>
+
+
+</ul>
+
+
+
+<a href="tel:0116931384" class="contact-btn">
+
+Call Us
+
+</a>
+
+
+</nav>
+
+
+<!-- HERO -->
+
+
+<section id="top" class="hero">
+
+
+<div class="hero-content">
+
+
+<small>
+
+Vodacom Approved Dealer • Randfontein
+
+</small>
+
+
+<h1>
+
+Connecting You To
+
+<span>
+The Future.
+</span>
+
+</h1>
+
+
+
+<p>
+
+Experience Vodacom contracts,
+upgrades, prepaid,
+fibre, LTE,
+accessories,
+business solutions
+and professional service.
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+<!-- STATS -->
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h2>
+5G
+</h2>
+
+<p>
+Latest Connectivity
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>
+100+
+</h2>
+
+<p>
+Accessories
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+AI
+</h2>
+
+<p>
+Latest Smartphones
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+★
+</h2>
+
+<p>
+Customer Service
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- WHY TRANSWIDE -->
+
+
+<section>
+
+
+<div class="section-title">
+
+
+<h2>
+
+Why Choose Transwide Cellular?
+
+</h2>
+
+
+<p>
+
+Your trusted Vodacom partner.
+
+</p>
+
+
+</div>
+
+
+
+<div class="features">
+
+
+
+<div class="feature">
+
+
+<div class="feature-icon">
+
+📱
+
+</div>
+
+
+<h3>
+
+Latest Smartphones
+
+</h3>
+
+
+<p>
+
+Samsung, Apple,
+HONOR, OPPO,
+Vivo, Xiaomi
+and many more.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+
+<div class="feature-icon">
+
+📶
+
+</div>
+
+
+<h3>
+
+Vodacom Solutions
+
+</h3>
+
+
+<p>
+
+Contracts,
+upgrades,
+prepaid,
+LTE,
+fibre and business solutions.
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<div class="feature-icon">
+
+🎁
+
+</div>
+
+
+<h3>
+
+Promotions
+
+</h3>
+
+
+<p>
+
+Special deals,
+competitions
+and exclusive offers.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- PHONES SECTION -->
+
+
+<section id="phones">
+
+
+<div class="section-title">
+
+<h2>
+
+Latest Smartphones
+
+</h2>
+
+
+<p>
+
+Explore the latest devices available at Transwide Cellular.
+
+</p>
+
+
+</div>
+
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+samsung.webp
+</div>
+
+
+<h3>
+
+Samsung
+
+</h3>
+
+
+<p>
+
+Galaxy S Series,
+Galaxy A Series,
+Galaxy Z Fold,
+Galaxy Z Flip
+and more.
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🍎
+
+</div>
+
+
+<h3>
+
+Apple
+
+</h3>
+
+
+<p>
+
+Latest iPhone models,
+Apple Watch,
+AirPods
+and accessories.
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🤖
+
+</div>
+
+
+<h3>
+
+Android
+
+</h3>
+
+
+<p>
+
+HONOR,
+OPPO,
+vivo,
+Huawei,
+Xiaomi
+and more.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+<!-- SERVICES -->
+
+
+<section id="services" style="background:#fafafa;">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Vodacom Services
+
+</h2>
+
+
+<p>
+
+Everything you need in one store.
+
+</p>
+
+
+</div>
+
+
+<div class="features">
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+📄
+
+</div>
+
+<h3>
+
+New Contracts
+
+</h3>
+
+<p>
+
+Find the perfect device and contract package.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🔄
+
+</div>
+
+<h3>
+
+Upgrades
+
+</h3>
+
+<p>
+
+Upgrade your current device
+to the latest technology.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+💳
+
+</div>
+
+<h3>
+
+Prepaid & SIM
+
+</h3>
+
+<p>
+
+SIM swaps,
+RICA,
+airtime,
+data
+and vouchers.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🌐
+
+</div>
+
+<h3>
+
+Fibre & LTE
+
+</h3>
+
+<p>
+
+Home connectivity,
+5G,
+LTE
+and business solutions.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ACCESSORIES -->
+
+
+<section>
+
+
+<div class="section-title">
+
+
+<h2>
+
+Accessories
+
+</h2>
+
+
+<p>
+
+Complete your mobile experience.
+
+</p>
+
+
+</div>
+
+
+
+<div class="accessories">
+
+
+<div class="accessory">
+
+<div class="accessory-icon">
+
+🎧
+
+</div>
+
+
+<h3>
+
+Audio
+
+</h3>
+
+
+<p>
+
+Earbuds,
+headphones
+and speakers.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="accessory">
+
+<div class="accessory-icon">
+
+🔋
+
+</div>
+
+
+<h3>
+
+Power
+
+</h3>
+
+
+<p>
+
+Chargers,
+cables
+and power banks.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="accessory">
+
+<div class="accessory-icon">
+
+📱
+
+</div>
+
+
+<h3>
+
+Protection
+
+</h3>
+
+
+<p>
+
+Covers,
+screen protectors
+and more.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- COMPETITION -->
+
+
+<section id="competition">
+
+
+
+<div class="section-title">
+
+
+<h2>
+
+🎉 Win With Transwide
+
+</h2>
+
+
+<p>
+
+Scan the QR code or enter online for your chance to win.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="store-box" style="text-align:center;">
+
+
+
+<h3>
+
+Competition Time!
+
+</h3>
+
+
+
+<p>
+
+Stand a chance to win exciting prizes.
+
+</p>
+
+
+
+
+<div class="features" style="margin-top:40px;">
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+📱
+
+</div>
+
+
+<h3>
+
+Smartphone
+
+</h3>
+
+<p>
+
+Premium device prize.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🎧
+
+</div>
+
+
+<h3>
+
+Tech Bundle
+
+</h3>
+
+
+<p>
+
+Accessories and surprises.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+🎁
+
+</div>
+
+
+<h3>
+
+Surprise Prizes
+
+</h3>
+
+
+<p>
+
+Exclusive giveaways.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<br><br>
+
+
+
+<button
+type="button"
+class="primary"
+onclick="openCompetition()">
+
+ENTER COMPETITION
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Visit Our Store
+
+</h2>
+
+
+<p>
+
+Your trusted Vodacom partner in Randfontein.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="store-box">
+
+
+<h3>
+
+Transwide Cellular
+
+</h3>
+
+
+<p>
+
+📍 Shop 2, Green Mile Centre,
+Kenneth Road,
+Greenhills,
+Randfontein
+
+<br><br>
+
+ 011 693 1384
+
+<br>
+
+ 082 977 9110
+
+<br>
+
+✉ transwidecellular.admin@vodadealers.co.za
+
+
+</p>
+
+<br><br>
+
+    <!-- Google Maps -->
+    <div class="card map">
+      <h2>Our Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.868175263669!2d27.695856175503984!3d-26.168422362517898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9597f76fce6b93%3A0x5714acfd18a19795!2sTranswide%20Cellular!5e0!3m2!1sen!2sza!4v1784121263367!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+
+<br><br>
+      <div class="hours">
+        <div>Monday <span>09:00 - 17:00</span></div>
+        <div>Tuesday <span>09:00 - 17:00</span></div>
+        <div>Wednesday <span>09:00 - 17:00</span></div>
+        <div>Thursday <span>09:00 - 17:00</span></div>
+        <div>Friday <span>09:00 - 17:00</span></div>
+        <div>Saturday <span>09:00 - 13:00</span></div>
+        <div>Sunday <span> Closed </span></div>
+        <div>Public Holiday <span> Closed </span></div>
+      </div>
+
+</section>
+
+
+<!-- WHATSAPP -->
+
+
+<a href="https://wa.me/27829779110" class="whatsapp">
+
+💬
+
+</a>
+
+
+
+
+
+<div class="popup" id="termsPopup">
+
+
+<div class="store-box terms-box">
+
+
+<button class="close-popup" onclick="closeTerms()">
+
+✕
+
+</button>
+
+
+
+<h2 style="color:#e60000;">
+
+Terms & Conditions
+
+</h2>
+
+
+<div class="terms-content">
+
+        <p>By accessing and using this website, and by participating in the promotional competition, you agree to the following Terms & Conditions:</p>
+        <ul style="padding-left: 20px; margin-top: 20px;">
+          <li>This website is provided "as is" without any warranties. Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from its use.</li>
+          <li>Participation in the competition is voluntary and entirely at your own free will.</li>
+          <li>Personal information collected via competition entries will be processed in accordance with Vodacom's Privacy Policy and the Protection of Personal Information Act, 4 of 2013 (POPIA).</li>
+          <li><strong>Eligibility:</strong> The competition is open to South African residents aged 16 years and older. Employees of Transwide Cellular, Vodacom, their immediate families, and associated agencies are not eligible to participate.</li>
+          <li><strong>Entry:</strong> Participants must complete the official entry form available online as specified. Only one entry per person is allowed. Incomplete or illegible entries will be disqualified.</li>
+          <li><strong>Prizes:</strong></li>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+              <li>Premium Huawei Hamper Pack - Portable Braai</li> 
+              <li>Premium Vodacom Hamper Pack</li>
+            </ul>
+            Prizes are non-transferable and cannot be exchanged for cash.
+          </li>
+          <li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Vodacom / Vodashop Randfontein Cellular stand on 1st March 2026 at 13:30. The draw results are final and no correspondence will be entered into.</li>
+          <li><strong>Promotion Period:</strong> The competition will run from <em>1st of August 2026 7h00 - 17h00 1st of Agust 2026.</li>
+          <li>Winners will be contacted directly using the contact details provided on the entry form. If a winner cannot be reached after <strong>two phone calls</strong>, an alternative winner will be selected.</li>
+          <li>By entering, participants agree to allow Vodacom and Transwide Cellular to publish their names and photos on Transwide Cellular for promotional purposes.</li>
+          <li>Neither Vodacom nor Transwide Cellular will be held liable for any technical failures or errors that may affect participation or winner selection.</li>
+          <li>By using this website and participating in the competition, you agree to indemnify and hold harmless Transwide Cellular and Vodacom from any claims, damages, or liabilities arising from your participation.</li>
+          <li><strong>Contact:</strong> For any questions regarding the competition, please contact Transwide Cellular at <em>011 693 1384</em>.</li>
+          <li><strong>E & OE</strong></li>
+        </ul>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<h2>
+
+Transwide Cellular
+
+</h2>
+
+
+<p>
+
+Vodacom Approved Dealer
+
+</p>
+
+
+<br>
+
+
+<p>
+
+© 2026 Transwide Cellular.
+All Rights Reserved.<br>
+Designed by IT APP SOLUTIONS
+
+</p>
+<br>
+
+<a href="javascript:void(0);" onclick="openTerms(); return false;">
+
+Terms & Conditions
+
+</a>
+
+</footer>
+
+
+
+
+
+
+
+
+<!-- COMPETITION POPUP -->
+
+
+<div class="popup" id="competitionPopup">
+
+
+<div class="store-box">
+
+<button class="close-popup" onclick="closeCompetition()">
+
+✕
+
+</button>
+
+
+<h2 style="color:#e60000;">
+🎉 Enter Competition
+</h2>
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSeVzRG3emf8rOSXxYGCjq0svtiT0dqeWnIiaALuEfqlumN_rA/viewform?embedded=true"
+width="100%"
+height="650"
+frameborder="0"
+marginheight="0"
+marginwidth="0"
+style="border:none;border-radius:15px;">
+
+Loading…
+
+</iframe>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<style>
+
+
+.whatsapp{
+
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+background:#25D366;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+z-index:999;
+
+
+}
+
+
+
+.popup{
+
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+align-items:center;
+
+justify-content:center;
+
+z-index:9999;
+
+padding:20px;
+
+}
+
+
+
+.popup .store-box{
+max-width:850px;
+width:100%;
+max-height:90vh;
+overflow:auto;
+}
+
+.close-popup{
+
+position:absolute;
+
+top:20px;
+
+right:25px;
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+border:none;
+
+background:#e60000;
+
+color:white;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.3s;
+
+}
+
+
+.close-popup:hover{
+
+transform:scale(1.1);
+
+background:#b40000;
+
+}
+
+
+.popup .store-box{
+
+position:relative;
+
+}
+
+
+
+.popup input{
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+}
+
+
+
+footer{
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+padding:60px 20px;
+
+}
+
+.terms-content{
+
+max-height:400px;
+
+overflow-y:auto;
+
+text-align:left;
+
+line-height:1.8;
+
+color:#555;
+
+margin-top:25px;
+
+}
+
+
+</style>
+
+
+
+
+
+
+
+<script>
+
+
+window.addEventListener("load",()=>{
+
+
+const loader=document.getElementById("loader");
+
+
+loader.style.opacity="0";
+
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},800);
+
+
+});
+
+
+
+
+
+
+function openCompetition(e){
+
+if(e)e.preventDefault();
+
+document.getElementById("competitionPopup").style.display="flex";
+
+}
+
+
+function closeCompetition(){
+
+document.getElementById(
+"competitionPopup"
+).style.display="none";
+
+}
+
+function openTerms(){
+
+event?.preventDefault();
+
+document.getElementById("termsPopup").style.display="flex";
+
+}
+
+
+
+function closeTerms(){
+
+document.getElementById(
+"termsPopup"
+).style.display="none";
+
+}
+</script>
+
+
+
+
+<style>
+
+
+@keyframes fall{
+
+
+to{
+
+transform:
+
+translateY(110vh)
+
+rotate(720deg);
+
+
+}
+
+}
+
+
+</style>
+
+
+
+
+
+</body>
+
+</html>
