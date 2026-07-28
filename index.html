@@ -902,6 +902,35 @@ color:var(--text);
 
 }
 
+.prize-link{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
+.prize-card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    transition:.35s ease;
+    cursor:pointer;
+    height:100%;
+}
+
+.prize-card i{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.prize-link:hover .prize-card{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,.20);
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+
+
 /*==========================
 COMPETITION
 ==========================*/
@@ -964,7 +993,7 @@ transform:translateX(-50%);
 
 background:
 linear-gradient(rgba(230,0,0,.92),rgba(170,0,0,.92)),
-url("VodashopInside.jpeg") center/cover;
+url("Transwide.Store.webp.jpg") center/cover;
 
 color:white;
 
@@ -1960,7 +1989,7 @@ Why Choose <span>Transwide Cellular</span>
 
 <p class="section-subtitle">
 
-For over 30 years, Transwide Cellular has been a trusted Vodacom Approved Dealer, proudly serving Randfontein and the surrounding communities. 
+For over 30 years, Transwide Cellular has been a trusted Vodacom Approved Dealer, proudly serving Randfontein and the surrounding communities in the cellular industry. 
 Our knowledgeable team is dedicated to providing personalised service, expert advice, 
 competitive Vodacom solutions, and a customer experience built on trust, reliability, and lasting relationships.
 
@@ -2012,6 +2041,12 @@ solutions for individuals and businesses.
 </div>
 
 <div class="service">
+<i class="fas fa-network-wired"></i>
+<h3>Fibre Internet</h3>
+<p>Enjoy lightning-fast Vodacom Fibre Internet for your home or business. We'll help you find the right package.</p>
+</div>
+
+<div class="service">
 <i class="fas fa-headset"></i>
 <h3>Technical Assistance</h3>
 <p>Need help with your device? Our consultants are ready to assist with setup and troubleshooting.</p>
@@ -2021,12 +2056,6 @@ solutions for individuals and businesses.
 <i class="fas fa-briefcase"></i>
 <h3>Business Solutions</h3>
 <p>Mobile connectivity, voice, internet and business packages tailored to your company.</p>
-</div>
-
-<div class="service">
-<i class="fas fa-network-wired"></i>
-<h3>Fibre Internet</h3>
-<p>Enjoy lightning-fast Vodacom Fibre Internet for your home or business. We'll help you find the right package.</p>
 </div>
 
 <div class="service">
@@ -2132,49 +2161,57 @@ Visit our Vodacom stand, scan the QR code and stand a chance to win incredible p
 
 <div class="prize-grid">
 
-<div class="prize-card">
+<a href="https://maps.app.goo.gl/JQ5XwwniTHvCZggx8"
+   target="_blank"
+   class="prize-link">
 
-<i class="fas fa-gift"></i>
+    <div class="prize-card">
 
-<h3>Huawei</h3>
+        <i class="fas fa-gift"></i>
 
-<p>
+        <h3>Bush n Buck</h3>
 
-Huawei branded merchandise and exclusive accessories.
+        <p>
+            Weekend Getaway! - Located in Brits
+        </p>
 
-</p>
+    </div>
 
-</div>
+</a>
 
-<div class="prize-card">
-
-<i class="fas fa-gift"></i>
-
-<h3>Bush n Buck</h3>
-
-<p>
-
-Weekend Getaway! - Located in Brits
-
-</p>
-
-</div>
-
-
+<a href="https://www.vivo.com/za/en" target="_blank" style="text-decoration:none; color:inherit; display:block;">
 
 <div class="prize-card">
 
-<i class="fas fa-gift"></i>
+    <i class="fas fa-gift"></i>
 
-<h3>Vivo</h3>
+    <h3>Vivo</h3>
 
-<p>
-
-Vivo branded merchandise and exclusive accessories.
-
-</p>
+    <p>
+        Vivo branded merchandise and exclusive accessories.
+    </p>
 
 </div>
+
+</a>
+
+<a href="https://www.huawei.com/za/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+
+<div class="prize-card">
+
+    <i class="fas fa-gift"></i>
+
+    <h3>Huawei</h3>
+
+    <p>
+        Huawei branded merchandise and exclusive accessories.
+    </p>
+
+</div>
+
+</a>
+
+<a href="https://www.vodacom.co.za/" target="_blank" class="prize-link">
 
 <div class="prize-card">
 
@@ -2183,12 +2220,12 @@ Vivo branded merchandise and exclusive accessories.
 <h3>Vodacom</h3>
 
 <p>
-
 Vodacom branded merchandise and exclusive accessories.
-
 </p>
 
 </div>
+
+</a>
 
 
 
@@ -2519,22 +2556,7 @@ connectivity needs.
 
 </div>
 
-<div class="footer-column">
 
-<h3>Quick Links</h3>
-
-<a href="#home">Home</a>
-
-<a href="#features">Why Choose Us</a>
-
-<a href="#services">Services</a>
-
-<a href="#competition">Competition</a>
-
-
-<a href="#contact">Contact</a>
-
-</div>
 
 <div class="footer-column">
 
