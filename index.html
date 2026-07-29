@@ -961,7 +961,7 @@ position:relative;
 display:flex;
 align-items:center;
 gap:90px;
-animation:partnerScroll 22s linear infinite;
+animation:partnerScroll 10s linear infinite;
 }
 
 .partner-track img{
@@ -1038,6 +1038,33 @@ font-size:2.5rem;
 
 margin-bottom:20px;
 
+}
+
+.prize-card{
+    position:relative;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    transition:.35s ease;
+    cursor:pointer;
+    height:100%;
+}
+
+.prize-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#ffd700;
+    color:#111;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
 
 /*==========================
@@ -2049,7 +2076,7 @@ solutions for individuals and businesses.
 <div class="service">
 <i class="fas fa-headset"></i>
 <h3>Technical Assistance</h3>
-<p>Need help with your device? Our consultants are ready to assist with setup and troubleshooting.</p>
+<p>Need help with your device? Our TechZone consultants are ready to assist with setup and troubleshooting.</p>
 </div>
 
 <div class="service">
@@ -2105,7 +2132,7 @@ COMPETITION
 
 <h2 class="section-title">
 
-🏆 Win Amazing Prizes!
+🏆 Win Amazing Prizes!<br>At Sionspoort Vleisfees Stand 253-255  on the 1st of August 2026<br>
 
 </h2>
 
@@ -2115,7 +2142,6 @@ COMPETITION
 
 <div class="partner-title">
 
-At Sionspoort Vleisfees on the 1st of August 2026<br>
 Prizes proudly sponsored by
 
 </div>
@@ -2161,67 +2187,81 @@ Visit our Vodacom stand, scan the QR code and stand a chance to win incredible p
 
 <div class="prize-grid">
 
-<a href="https://maps.app.goo.gl/JQ5XwwniTHvCZggx8"
+<a href="https://maps.app.goo.gl/LQwmjNjEWFVmfouN7"
    target="_blank"
    class="prize-link">
 
     <div class="prize-card">
+        <div class="prize-badge">1st Prize</div>
 
         <i class="fas fa-gift"></i>
 
-        <h3>Bush n Buck</h3>
+        <h3>Bush 'n Buck</h3>
 
         <p>
-            Weekend Getaway! - Located in Brits
+            Weekend Getaway!<br>Includes Game Drive!<br><b>Live Draw at Sionspoort Vleisfees @ 18:00</b><br><br>
+            <strong>Click for Directions</strong>
         </p>
 
     </div>
 
 </a>
 
-<a href="https://www.vivo.com/za/en" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+<a href="https://www.vodacom.co.za/" 
+target="_blank" 
+class="prize-link">
 
 <div class="prize-card">
-
-    <i class="fas fa-gift"></i>
-
-    <h3>Vivo</h3>
-
-    <p>
-        Vivo branded merchandise and exclusive accessories.
-    </p>
-
-</div>
-
-</a>
-
-<a href="https://www.huawei.com/za/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-
-<div class="prize-card">
-
-    <i class="fas fa-gift"></i>
-
-    <h3>Huawei</h3>
-
-    <p>
-        Huawei branded merchandise and exclusive accessories.
-    </p>
-
-</div>
-
-</a>
-
-<a href="https://www.vodacom.co.za/" target="_blank" class="prize-link">
-
-<div class="prize-card">
+    <div class="prize-badge">2nd Prize</div>
 
 <i class="fas fa-gift"></i>
 
 <h3>Vodacom</h3>
 
 <p>
-Vodacom branded merchandise and exclusive accessories.
+Vodacom branded merchandise and exclusive accessories.<br><b>Live Draw at Sionspoort Vleisfees @ 18:00</b><br>
 </p>
+
+</div>
+
+</a>
+
+
+<a href="https://www.huawei.com/za/" 
+target="_blank" 
+style="text-decoration:none; color:inherit; display:block;">
+
+<div class="prize-card">
+    <div class="prize-badge">3rd Prize</div>
+
+    <i class="fas fa-gift"></i>
+
+    <h3>Huawei</h3>
+
+    <p>
+        Huawei branded merchandise.<br><b>Sign up for a new contract or upgrade to any Huawei device at the Vleisfees or in-store and stand a chance to win.</b><br>
+        <br> <b>Draw date ends 11/08/2026 @ Transwide Cellular<br></b> 
+    </p>
+
+</div>
+
+</a>
+
+<a href="https://www.vivo.com/za/en" 
+target="_blank" 
+style="text-decoration:none; color:inherit; display:block;">
+
+<div class="prize-card">
+    <div class="prize-badge">4th Prize</div>
+
+    <i class="fas fa-gift"></i>
+
+    <h3>Vivo</h3>
+
+    <p>
+        Vivo branded merchandise.<br><b>Sign up for a new contract or upgrade to any Vivo device at the Vleisfees or in-store and stand a chance to win.</b><br>
+        <br> <b>Draw date ends 11/08/2026 @ Transwide Cellular<br></b> 
+    </p>
 
 </div>
 
@@ -2342,9 +2382,7 @@ Do you sell accessories?
 
 <p>
 
-Yes. We stock chargers, covers,
-screen protectors, smartwatches,
-earbuds and many other accessories.
+Yes, we sell a wide range of Vodacom-approved accessories from KNR Flatrock and Gammatek.
 
 </p>
 
@@ -2366,7 +2404,7 @@ Can businesses apply for contracts?
 
 <p>
 
-Yes. Our consultants can recommend
+Yes. Our Corporate Consultants can recommend
 the ideal Vodacom business solution
 for your company's needs.
 
@@ -2689,8 +2727,6 @@ aria-label="Back to Top"
 
 <!-- TERMS & CONDITIONS POPUP -->
 
-  <!-- Terms & Conditions Modal -->
-   
   <div id="termsModal" class="modal">
     <div class="modal-content" style="max-width: 700px; margin: auto; padding: 40px; background: #fff; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); font-family: 'Arial', sans-serif;">
       <span class="close" id="closeTermsModal" style="float: right; font-size: 28px; cursor: pointer;">&times;</span>
@@ -2698,6 +2734,7 @@ aria-label="Back to Top"
       <div style="font-size: 14px; color: #333; line-height: 1.7;">
         <p>By accessing and using this website, and by participating in the promotional competition, you agree to the following Terms & Conditions:</p>
         <ul style="padding-left: 20px; margin-top: 20px;">
+          <li><b>The information, products, promotions, pricing and services displayed on this website are subject to change without prior notice.</b></li>
           <li>This website is provided "as is" without any warranties. Transwide Cellular and Vodacom are not responsible for any errors, inaccuracies, or damages resulting from its use.</li>
           <li>Participation in the competition is voluntary and entirely at your own free will.</li>
           <li>Personal information collected via competition entries will be processed in accordance with Vodacom's Privacy Policy and the Protection of Personal Information Act, 4 of 2013 (POPIA).</li>
@@ -2705,17 +2742,17 @@ aria-label="Back to Top"
           <li><strong>Entry:</strong> Participants must complete the official entry form available online as specified. Only one entry per person is allowed. Incomplete or illegible entries will be disqualified.</li>
           <li><strong>Prizes:</strong></li>
             <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
-              <li>Bush 'n Buck - Weekend Getaway</li> 
-              <li>Premium Vodacom Hamper Pack</li>
-              <li>Premium Huawei Hamper Pack</li>
-              <li>Vivo</li>
+              <li>Bush 'n Buck - Weekend Getaway - Contact Bush & Buck Owner Bejay on 078 185 3832<br> T's & C's Apply for Bush & Buck Prize.</li> 
+              <li> Vodacom Hamper Pack</li>
+              <li> Huawei Hamper Pack</li>
+              <li> Vivo Hamper Pack</li>
             </ul>
             Prizes are non-transferable and cannot be exchanged for cash.
           </li>
-          <li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Vodacom / Vodashop Randfontein Cellular stand on 1st March 2026 at 13:30. The draw results are final and no correspondence will be entered into.</li>
-          <li><strong>Promotion Period:</strong> The competition will run from <em>1st of August 2026 7h00 - 17h00 1st of Agust 2026.</li>
+          <li><strong>Winner Selection:</strong> Winners will be selected via a random draw conducted live at the Transwide Cellular Stand 253-255 @ 18:00 on the 1st Aug 2026. The draw results are final and no correspondence will be entered into.</li>
+          <li><strong>Promotion Period:</strong> The competition will take place <em>on 1 August 2026, from 07:00 to 17:00. As Per <b>Huawei And Vivo, competition will end on the 11th of August 2026.</b></li>
           <li>Winners will be contacted directly using the contact details provided on the entry form. If a winner cannot be reached after <strong>two phone calls</strong>, an alternative winner will be selected.</li>
-          <li>By entering, participants agree to allow Vodacom and Transwide Cellular to publish their names and photos on Transwide Cellular for promotional purposes.</li>
+          <li>By entering, participants agree to allow Vodacom and Transwide Cellular to publish their names and photos on Transwide Cellular Website for promotional purposes.</li>
           <li>Neither Vodacom nor Transwide Cellular will be held liable for any technical failures or errors that may affect participation or winner selection.</li>
           <li>By using this website and participating in the competition, you agree to indemnify and hold harmless Transwide Cellular and Vodacom from any claims, damages, or liabilities arising from your participation.</li>
           <li><strong>Contact:</strong> For any questions regarding the competition, please contact Transwide Cellular at <em>011 693 1384</em>.</li>
